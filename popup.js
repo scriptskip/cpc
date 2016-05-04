@@ -22,8 +22,19 @@ var game =
 
 	load: function ()
 	{
-		game.canvas.load ();
+		game.window.load ();		
+	},
+
+	window:
+	{
+		load: function ()
+		{
+			window.onload = function ()
+			{
+				game.canvas.load ();
+			};
+		}
 	}
 };
 
-window.onload = function () { game.load (); };
+game.load ();
